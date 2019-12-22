@@ -1,12 +1,17 @@
-# code here!
+class School
+  attr_accessor :roster, :student_name, :school_name
+  def initialize(school_name)
+    @school_name = school_name
+    @roster = {}
+  end
 
-class School 
-  school = School.new("Bayside High School")
-  school.add_student("Zach Morris", 9)
-school.roster
-school.add_student("AC Slater", 9)
-school.add_student("Kelly Kapowski", 10)
-school.add_student("Screech", 11)
-school.roster
-  
+  def add_student(student_name, grade)
+    if @roster[grade] == true
+      @roster[grade] << student_name
+    else
+      @roster[grade] = []
+      @roster[grade] << student_name
+    end
+  end
+
 end
